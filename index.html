@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // JSX로 적은 것을 브라우저가 이해할 수 있게 변환하는 도구: Babel
+    // const Title = () => (
+    //   <h3 id="title" onMouserEnter={() => console.log("mouse enter")}>
+    //     Hello I'm a title
+    //   </h3>
+    // );
+    // const Button = () => (
+    //   <button
+    //     style={{
+    //       backgroundColor: "tomato",
+    //     }}
+    //     onClick={() => console.log("clicked")}
+    //   >
+    //     Click Me
+    //   </button>
+    // );
+    const root = document.getElementById("root");
+    function App() {
+      const [counter, setCounter] = React.useState(0);
+      return (
+        <React.Fragment>
+          <h3 id="title">Total clicks: {counter}</h3>
+          <button
+            onClick={() => {
+              setCounter(counter + 1);
+            }}
+          >
+            Click Me!
+          </button>
+        </React.Fragment>
+      );
+    }
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
